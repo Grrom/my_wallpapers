@@ -1,0 +1,5 @@
+#!/bin/bash
+path=/usr/share/wallpapers/my_wallpapers
+sudo mkdir -p $path
+sudo cp *g $path
+sudo cp *g $path
