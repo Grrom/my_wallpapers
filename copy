@@ -1,5 +1,4 @@
 #!/bin/bash
 path=/usr/share/wallpapers/my_wallpapers
 sudo mkdir -p $path
-sudo cp *g $path
-sudo cp *g $path
+for image in *g; do sudo cp $image $path; echo "copied $image"; done
