@@ -1,8 +1,10 @@
 #!/bin/bash
 echo "↓   Syncing with the repository...   ↓"
-if [[ $(git pull) == "Already up to date." ]]; then
-  echo "nothing to update"
-else
-  ./copy
-fi
+git pull
+./copy
+#if [[ $(git pull) == "Already up to date." ]]; then
+#  echo "nothing to update"
+#else
+#  ./copy
+#fi
 

@@ -1,4 +1,18 @@
 #!/bin/bash
 path=/usr/share/wallpapers/my_wallpapers
 sudo mkdir -p $path
-for image in *.*; do sudo cp -un $image $path && echo "✅Copied $image"; done;
+wallpapers=$(ls $path)
+
+copied=0
+for image in *.*; do 
+  if [[ $(printf '%s\n' "${wallpapers[@]}" | grep -F -x "$image") == "" ]]; then
+    sudo cp -un $image $path && echo "✅Copied $image" && ((copied+=1))
+  fi
+done;
+
+if [[ "$copied" == "0" ]]; then
+  echo " ⚠️ Wallpapers already exists ⚠️  "
+else
+  echo " ✅ Wallpapers copied successfully ✅ "
+fi
+
