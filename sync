@@ -1,6 +1,7 @@
 #!/bin/bash
 echo "↓   Syncing with the repository...   ↓"
 git pull
+git push
 ./copy
 #if [[ $(git pull) == "Already up to date." ]]; then
 #  echo "nothing to update"
