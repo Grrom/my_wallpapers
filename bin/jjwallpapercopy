@@ -4,9 +4,10 @@ sudo mkdir -p $path
 wallpapers=$(ls $path)
 
 copied=0
-for image in *.*; do 
-  if [[ $(printf '%s\n' "${wallpapers[@]}" | grep -F -x "$image") == "" ]]; then
-    sudo cp -un $image $path && echo "✅Copied $image" && ((copied+=1))
+for image in ../*.*; do 
+  image_name=${image#../*}
+  if [[ $(printf '%s\n' "${wallpapers[@]}" | grep -F -x "$image_name") == "" ]]; then
+    sudo cp -un $image $path && echo "✅Copied $image_name" && ((copied+=1))
   fi
 done;
 

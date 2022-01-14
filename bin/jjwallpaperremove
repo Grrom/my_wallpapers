@@ -1,0 +1,5 @@
+#!/bin/bash
+for image in ../*.*; do 
+  image_name=${image#../*}
+  sudo rm /usr/share/wallpapers/my_wallpapers/$image_name && echo "✅ Removed $image_name";
+done
