@@ -1,7 +1,6 @@
 #!/bin/bash
 echo "↓   Syncing with the repository...   ↓"
-git pull
-git push
+git pull && git add . && git commit -am "add new wallpaper" && git push
 ./copy
 #if [[ $(git pull) == "Already up to date." ]]; then
 #  echo "nothing to update"
