@@ -6,5 +6,5 @@ message=$1
 if [[ -z "$message" ]]; then message="add wallpaper";fi
 echo "↕   Syncing with the repository...   ↕"
 git pull && git add . && git commit -am "$message" && git push
-./jjwallpapercopy
+jjwallpapercopy
 
